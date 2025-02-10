@@ -7,7 +7,7 @@ function TrackList (results) {
         <div>
             {results.map(result => {
                 rerurn (
-                    <Track />
+                    <Track track={result}/>
                 )
             })}
         </div>
