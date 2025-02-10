@@ -10,7 +10,13 @@ const onChangeHandler = (e) => {
 
     return (
         <>
-            <input type='text' placeholder='Search' value={value} onChange={onChangeHandler} className={styles.searchbar}></input>
+            <input
+                type='text'
+                placeholder='Search'
+                value={value}
+                onChange={onChangeHandler}
+                className={styles.searchbar}
+            />
         </>
     )
 };
