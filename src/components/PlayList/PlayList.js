@@ -10,11 +10,16 @@ function PlayList(props) {
         props.onSave(event.target.value);
     }
 
+    const savePlaylist = () => {
+        props.saveToSpotify();
+    }
+
     return (
         <>
             <h2>PlayList</h2>
             <input value={term} onChange={handleChange} />
             <TrackList tracks={props.tracks} isRemoval={true} onRemove={props.onRemove}/>
+            <button onClick={savePlaylist} >SAVE PLAYLIST</button>
         </>
     )
 }

@@ -43,9 +43,14 @@ function App() {
     setPlaylist((prevPlaylist) => prevPlaylist.filter(track => track.id !== trackId));
   }
 
-  const savePlaylist = (term) => {
+  const updatePlaylistName = (term) => {
     setPlaylistName(term);
     console.log('term is: ', term)
+  }
+
+  const saveToSpotify = () => {
+    const trackUris = playlist.map(track => track.uri);
+    console.log(trackUris);
   }
 
   return (
@@ -54,7 +59,7 @@ function App() {
       <SearchBar onSearch={search}/>
       <div>
         <SearchResults tracks={searchResults} onAdd={addTrack}/>
-        <PlayList tracks={playlist} onRemove={removeTrack} onSave={savePlaylist} defaultValue={playlistName} />
+        <PlayList tracks={playlist} onRemove={removeTrack} onSave={updatePlaylistName} defaultValue={playlistName} saveToSpotify={saveToSpotify} />
       </div>
     </div>
   )
