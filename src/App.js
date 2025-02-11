@@ -6,8 +6,10 @@ import PlayList from './components/PlayList/PlayList';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
-  const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [playlist, setPlaylist] = useState([]);
 
+  //Fetch data from the server
+  //SOLVE BUG: FETCHING NEW DATAS FROM SERVER, ENSURE ADDED SONGS AREN'T DISPLAYED 
   const search = async (term) => {
     try {
       const response = await fetch('/tracks.json');
@@ -18,18 +20,22 @@ function App() {
     }
   }
 
+  //Add a track to the playlist state
   const addTrack = (trackId) => {
-    if (playlistTracks.some(element => element.id === trackId)) {
+    if (playlist.some(element => element.id === trackId)) {
       return;
     } else {
       const track = searchResults.find(track => track.id === trackId);
-      setPlaylistTracks([...playlistTracks  , track]);
+      //Add track to Playlist array
+      setPlaylist([...playlist  , track]);
+      //Remove track to Results array
+      setSearchResults((prevResults) => prevResults.filter(track => track.id !== trackId));
     }
   }
 
   return (
     <div id='app'>
-      <button onClick={() => console.log(playlistTracks)}></button>
+      <button onClick={() => console.log(playlist, searchResults)}></button>
       <SearchBar onSearch={search}/>
       <div>
         <SearchResults tracks={searchResults} onAdd={addTrack}/>
