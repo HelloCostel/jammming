@@ -6,6 +6,7 @@ import PlayList from './components/PlayList/PlayList';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const search = async (term) => {
     try {
@@ -17,11 +18,21 @@ function App() {
     }
   }
 
+  const addTrack = (trackId) => {
+    if (playlistTracks.some(element => element.id === trackId)) {
+      return;
+    } else {
+      const track = searchResults.find(track => track.id === trackId);
+      setPlaylistTracks([...playlistTracks  , track]);
+    }
+  }
+
   return (
     <div id='app'>
+      <button onClick={() => console.log(playlistTracks)}></button>
       <SearchBar onSearch={search}/>
       <div>
-        <SearchResults tracks={searchResults} />
+        <SearchResults tracks={searchResults} onAdd={addTrack}/>
         <PlayList />
       </div>
     </div>

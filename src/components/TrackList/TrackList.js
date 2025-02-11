@@ -6,7 +6,7 @@ function TrackList(props) {
     return (
         <ul>
             {props.tracks.map(track => {
-                return <Track key={track.title} title={track.title} artist={track.artist} />
+                return <Track key={track.id} id={track.id} name={track.name} artist={track.artist} onAdd={props.onAdd} />
             })}
         </ul>
     )

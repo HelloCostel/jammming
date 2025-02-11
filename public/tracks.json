@@ -1,42 +1,72 @@
 [
     {
-        "title": "Bohemian Rhapsody",
-        "artist": "Queen"
+        "id": 1,
+        "name": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "album": "A Night at the Opera",
+        "uri": "spotify:track:1"
     },
     {
-        "title": "Imagine",
-        "artist": "John Lennon"
+        "id": 2,
+        "name": "Imagine",
+        "artist": "John Lennon",
+        "album": "Imagine",
+        "uri": "spotify:track:2"
     },
     {
-        "title": "Hotel California",
-        "artist": "Eagles"
+        "id": 3,
+        "name": "Hotel California",
+        "artist": "Eagles",
+        "album": "Hotel California",
+        "uri": "spotify:track:3"
     },
     {
-        "title": "Stairway to Heaven",
-        "artist": "Led Zeppelin"
+        "id": 4,
+        "name": "Stairway to Heaven",
+        "artist": "Led Zeppelin",
+        "album": "Led Zeppelin IV",
+        "uri": "spotify:track:4"
     },
     {
-        "title": "Hey Jude",
-        "artist": "The Beatles"
+        "id": 5,
+        "name": "Hey Jude",
+        "artist": "The Beatles",
+        "album": "Hey Jude",
+        "uri": "spotify:track:5"
     },
     {
-        "title": "Smells Like Teen Spirit",
-        "artist": "Nirvana"
+        "id": 6,
+        "name": "Smells Like Teen Spirit",
+        "artist": "Nirvana",
+        "album": "Nevermind",
+        "uri": "spotify:track:6"
     },
     {
-        "title": "Billie Jean",
-        "artist": "Michael Jackson"
+        "id": 7,
+        "name": "Billie Jean",
+        "artist": "Michael Jackson",
+        "album": "Thriller",
+        "uri": "spotify:track:7"
     },
     {
-        "title": "Like a Rolling Stone",
-        "artist": "Bob Dylan"
+        "id": 8,
+        "name": "Like a Rolling Stone",
+        "artist": "Bob Dylan",
+        "album": "Highway 61 Revisited",
+        "uri": "spotify:track:8"
     },
     {
-        "title": "What's Going On",
-        "artist": "Marvin Gaye"
+        "id": 9,
+        "name": "What's Going On",
+        "artist": "Marvin Gaye",
+        "album": "What's Going On",
+        "uri": "spotify:track:9"
     },
     {
-        "title": "Purple Haze",
-        "artist": "Jimi Hendrix"
+        "id": 10,
+        "name": "Purple Haze",
+        "artist": "Jimi Hendrix",
+        "album": "Are You Experienced",
+        "uri": "spotify:track:10"
     }
 ]
