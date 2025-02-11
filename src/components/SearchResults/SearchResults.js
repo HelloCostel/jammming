@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './SearchResults.module.css';
 import TrackList from '../TrackList/TrackList';
 
-function SearchResults () {
-
+function SearchResults(props) {
     return (
         <div>
-            <TrackList results={results}/>
+            <h2>Results</h2>
+            <TrackList tracks={props.tracks}/>
         </div>
     )
 }

@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 
-function SearchBar() {
-const [value, setValue] = useState('');
+function SearchBar(props) {
+    const [term, setTerm] = useState('');
+    const handleTermChange = (event) => {
+        setTerm(event.target.value);
+    }
 
-const onChangeHandler = (e) => {
-    setValue(e.target.value);
-}
+    const search = () => {
+        props.onSearch(term);
+    }
 
     return (
-        <>
-            <input
-                type='text'
-                placeholder='Search'
-                value={value}
-                onChange={onChangeHandler}
-                className={styles.searchbar}
-            />
-        </>
+        <div id='search-bar'>
+            <input placeholder='Enter A Song, Album, or Artist' onChange={handleTermChange}/>
+            <button onClick={search} >SEARCH</button>
+        </div>
     )
-};
+}
 
 export default SearchBar;
