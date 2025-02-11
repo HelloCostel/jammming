@@ -7,12 +7,25 @@ function Track(props) {
         props.onAdd(props.id);
     }
 
-    return (
-        <li>
-            <div>{props.name} | {props.artist}</div>
-            <button onClick={addTrack}>+</button>
-        </li>
-    )
+    const removeTrack = () => {
+        props.onRemove(props.id);
+    }
+
+    if (props.isRemoval) {
+        return (
+            <li>
+                <div>{props.name} | {props.artist}</div>
+                <button onClick={removeTrack}>-</button>
+            </li>
+        )
+    } else {
+        return (
+            <li>
+                <div>{props.name} | {props.artist}</div>
+                <button onClick={addTrack}>+</button>
+            </li>
+        )
+    }
 }
 
 export default Track;

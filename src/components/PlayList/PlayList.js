@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './PlayList.module.css';
 import TrackList from '../TrackList/TrackList';
 
-function PlayList() {
-    const [playlist, setPlaylist] = useState([]);
+function PlayList(props) {
 
     return (
         <>
-            <TrackList tracks={playlist} />
+            <h2>PlayList</h2>
+            <TrackList tracks={props.tracks} isRemoval={true} onRemove={props.onRemove}/>
         </>
     )
 }
