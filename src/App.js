@@ -7,6 +7,7 @@ import PlayList from './components/PlayList/PlayList';
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
+  const [playlistName, setPlaylistName] = useState('');
 
   //Fetch data from the server
   //SOLVE BUG: FETCHING NEW DATAS FROM SERVER, ENSURE ADDED SONGS AREN'T DISPLAYED 
@@ -42,13 +43,18 @@ function App() {
     setPlaylist((prevPlaylist) => prevPlaylist.filter(track => track.id !== trackId));
   }
 
+  const savePlaylist = (term) => {
+    setPlaylistName(term);
+    console.log('term is: ', term)
+  }
+
   return (
     <div id='app'>
-      <button onClick={() => console.log(playlist, searchResults)}></button>  {/*Debug*/}
+      <button onClick={() => console.log(playlistName)}></button>  {/*Debug*/}
       <SearchBar onSearch={search}/>
       <div>
         <SearchResults tracks={searchResults} onAdd={addTrack}/>
-        <PlayList tracks={playlist} onRemove={removeTrack}/>
+        <PlayList tracks={playlist} onRemove={removeTrack} onSave={savePlaylist} defaultValue={playlistName} />
       </div>
     </div>
   )
