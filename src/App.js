@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchResults from './components/SearchResults/SearchResults';
 import PlayList from './components/PlayList/PlayList';
+import Spotify from './util/Spotify';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -11,14 +12,8 @@ function App() {
 
   //Fetch data from the server
   //SOLVE BUG: FETCHING NEW DATAS FROM SERVER, ENSURE ADDED SONGS AREN'T DISPLAYED 
-  const search = async (term) => {
-    try {
-      const response = await fetch('/tracks.json');
-      const data = await response.json();
-      setSearchResults(data);
-    } catch (error) {
-      console.error('Error fetching datas:', error);
-    }
+  const search = (term) => {
+    Spotify.search(term).then(setSearchResults);
   }
 
   //Add a track to the playlist state and remove it from the searchResults state
