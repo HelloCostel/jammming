@@ -6,7 +6,19 @@ function TrackList(props) {
     return (
         <ul>
             {props.tracks.map(track => {
-                return <Track key={track.id} id={track.id} name={track.name} artist={track.artist} onAdd={props.onAdd} onRemove={props.onRemove} isRemoval={props.isRemoval} />
+                console.log(track.image)
+                return (
+                    <Track
+                        key={track.id}
+                        id={track.id}
+                        name={track.name}
+                        image={track.image}
+                        artist={track.artist}
+                        onAdd={props.onAdd}
+                        onRemove={props.onRemove}
+                        isRemoval={props.isRemoval}
+                    />
+                )
             })}
         </ul>
     )

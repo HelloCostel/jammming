@@ -14,14 +14,18 @@ function Track(props) {
     if (props.isRemoval) {
         return (
             <li>
-                <div>{props.name} | {props.artist}</div>
+                <div>{props.name} | {props.artist}
+                    <img src={props.image} alt='album cover' />
+                </div>
                 <button onClick={removeTrack}>-</button>
             </li>
         )
     } else {
         return (
             <li>
-                <div>{props.name} | {props.artist}</div>
+                <div>{props.name} | {props.artist}
+                    <img src={props.image} alt='album cover' />
+                </div>
                 <button onClick={addTrack}>+</button>
             </li>
         )
