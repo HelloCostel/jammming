@@ -52,11 +52,13 @@ function App() {
   }
 
   return (
-    <div id='app'>
-      <button onClick={() => console.log(playlistName)}></button>  {/*Debug*/}
-      <SearchBar onSearch={search}/>
+    <div className={styles.app} id='app'>
+      <header>
+        <h1>Ja<span>mmm</span>ing</h1>
+        <SearchBar onSearch={search}/>
+      </header>
       <div>
-        <SearchResults tracks={searchResults} onAdd={addTrack}/>
+        <SearchResults tracks={searchResults} onAdd={addTrack} />
         <PlayList tracks={playlist} onRemove={removeTrack} onSave={updatePlaylistName} defaultValue={playlistName} saveToSpotify={saveToSpotify} />
       </div>
     </div>

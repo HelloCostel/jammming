@@ -12,7 +12,7 @@ function SearchBar(props) {
     }
 
     return (
-        <div id='search-bar'>
+        <div id='search-bar' className={styles.searchbar}>
             <input placeholder='Enter A Song, Album, or Artist' onChange={handleTermChange}/>
             <button onClick={search} >SEARCH</button>
         </div>

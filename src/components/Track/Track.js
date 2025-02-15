@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import styles from './Track.module.css';
 
 function Track(props) {
@@ -13,18 +13,20 @@ function Track(props) {
 
     if (props.isRemoval) {
         return (
-            <li>
-                <div>{props.name} | {props.artist}
+            <li className={styles.track}>
+                <div>
                     <img src={props.image} alt='album cover' />
+                    <p>{props.name} | {props.artist}</p>
                 </div>
                 <button onClick={removeTrack}>-</button>
             </li>
         )
     } else {
         return (
-            <li>
-                <div>{props.name} | {props.artist}
+            <li className={styles.track}>
+                <div>
                     <img src={props.image} alt='album cover' />
+                    <p>{props.name} | {props.artist}</p>
                 </div>
                 <button onClick={addTrack}>+</button>
             </li>

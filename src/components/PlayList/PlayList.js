@@ -15,12 +15,11 @@ function PlayList(props) {
     }
 
     return (
-        <>
-            <h2>PlayList</h2>
-            <input value={term} onChange={handleChange} />
+        <div className={styles.playlist}>
+            <input placeholder='Your Playlist' value={term} onChange={handleChange} />
             <TrackList tracks={props.tracks} isRemoval={true} onRemove={props.onRemove}/>
-            <button onClick={savePlaylist} >SAVE PLAYLIST</button>
-        </>
+            <button className={styles.button} onClick={savePlaylist} >SAVE PLAYLIST</button>
+        </div>
     )
 }
 

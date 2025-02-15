@@ -1,0 +1,22 @@
+.app header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #282c34;
+    color: #fff;
+    height: 100px;
+}
+
+.app h1 {
+    width: 50%;
+    font-size: 3em;
+    margin: 20px;
+    text-align: center;
+}
+.app span {
+    color: #bc2cff;
+}
+
+.app div  {
+    display: flex;
+}
